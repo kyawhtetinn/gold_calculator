@@ -13,20 +13,23 @@
 			var kyat = parseInt(document.Gold.kt.value);
 			var current = parseInt(document.Gold.cu.value);
 			var kt = kyat / current;
-			var pe = (kt * 16) ;
+			
 
 			// to convert float to int
 			function float2int(value){
 				return value | 0;
 			}
-			
-			var npe = float2int(pe);
+			// for kyat
 			var nkt = float2int(kt);
+
+			// for pe
+			var pe = ( (kt - nkt) * 16) ;
+			var npe = float2int(pe);
+
+			// for ye
 			var ye = (pe - npe) * 8 ;
 			var nye = ye.toFixed(1);
-			// var lye = float2int(nye);
-			// var sate = nye - lye;
-			// if( sate )
+			
 			var ans = document.getElementById('ans'); 
 			ans.innerHTML = nkt+" ကျပ်သား " + npe + " ပဲ  " + nye + " ရွေး";
 
